@@ -1,0 +1,28 @@
+<div class="container rounded pb-5">
+
+  <div class="row text-center pt-5 pb-5">
+    <div class="col-md-12">
+      <h2>Personalizar Pedido</h2>
+    </div>
+  </div>
+
+  <div class="row mb-1">
+    <div class="col-sm-4 text-center fw-bold fs-5">Ingrediente</div>
+    <div class="col-sm-4 text-center fw-bold fs-5">Preço Unitário</div>
+    <div class="col-sm-4 text-center fw-bold fs-5">Quantidade</div>
+  </div>
+
+  <div class="row mb-1 div-hover" *ngFor="let ingredient of ingredients">
+    <div class="col-sm-4 text-center">{{ingredient.name}}</div>
+    <div class="col-sm-4 text-center">{{ingredient.price | currency}}</div>
+    <div class="col-sm-4 text-center">
+      <input type="number" [(ngModel)]="ingredient.quantity" min="0">
+    </div>
+  </div>
+
+  <div class="row pt-2 pb-4">
+    <div class="col-md-4 offset-8 text-center">
+      <button type="button" class="btn btn-primary" (click)="onOrder()">Realizar Pedido</button>
+    </div>
+  </div>
+</div>

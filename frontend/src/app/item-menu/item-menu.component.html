@@ -1,0 +1,18 @@
+<div class="container rounded pb-5 pt-2">
+  <ngb-alert type="success" (closed)="showAlert = false" *ngIf="showAlert">Pedido Feito!</ngb-alert>
+
+  <div class="row text-center pt-5 pb-5">
+    <div class="col-md-12">
+      <h2>Cardápio</h2>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-md-4 offset-2 text-center fw-bold fs-5">Nome</div>
+    <div class="col-md-4 text-center fw-bold fs-5">Ingredientes</div>
+  </div>
+  <div class="row mb-2 div-hover" *ngFor="let item of menuItems" (click)="onSelectMenuItem(item)">
+    <div class="col-md-4 offset-2 text-center">{{item.name}}</div>
+    <div class="col-md-4 text-center">{{concatIngredients(item.ingredients)}}</div>
+  </div>
+</div>

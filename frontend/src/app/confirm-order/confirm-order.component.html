@@ -1,0 +1,44 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="exampleModalLabel">Resumo do Pedido</h4>
+  <button type="button" class="close" aria-label="Close" (click)="close()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="container-fluid">
+    <div class="row" *ngIf="itemOrder.name">
+      <div class="col-md-12">
+        <h5>{{itemOrder.name}}</h5>
+      </div>
+    </div>
+
+    <hr *ngIf="itemOrder.name">
+
+    <div class="row">
+      <div class="col-md-12">
+        <h5>Ingredients</h5>
+      </div>
+    </div>
+    <div class="row" *ngFor="let ingredient of itemOrder.ingredients">
+      <div class="col-sm-8">
+        {{ingredient.name}}
+      </div>
+
+      <div class="col-sm-4">
+        {{ingredient.quantity}}
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="col-md-12 text-end">
+        Total: {{itemOrder.price | currency}}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="close()">Cancelar</button>
+  <button type="button" class="btn btn-primary" ngbAutofocus (click)="onOrder()">Fazer Pedido</button>
+</div>

@@ -1,0 +1,18 @@
+input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  text-align: center;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.div-hover {
+  line-height: 2rem;
+}
+
+.div-hover:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
